@@ -4,13 +4,14 @@
 echo 'Creating temporary directory for downloaded files'
 mkdir temp
 mv install.sh temp
-cd temp
+cd temp || return
 
 
 echo 'Installing updates and programs'
 wget -O programs.sh https://www.dropbox.com/s/73au59gq1bjetdi/programs.sh?dl=1
-wget -O fixes.sh https://goo.gl/9KkNvA
-sh fixes.sh
+# wget -O fixes.sh https://goo.gl/9KkNvA
+# TODO: set up fixes.sh to modify xfce4 config to not lock the screen after sleeps and suspends -- or just have this one script do that.
+# sh fixes.sh
 sh programs.sh
 
 echo 'Instituting fixes to Linux'
