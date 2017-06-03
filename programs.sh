@@ -6,21 +6,21 @@ then echo "Please run as root or use sudo"
      exit
 fi
 
-echo 'Adding Google Chrome repo'
-echo deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main > google-chrome.list
-sudo mv google-chrome.list /etc/apt/sources.list.d/
-echo 'Adding google public signing key'
-wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-echo 'Update package indices and installing updates to system'
+# echo 'Adding Google Chrome repo'
+# echo deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main > google-chrome.list
+# sudo mv google-chrome.list /etc/apt/sources.list.d/
+# echo 'Adding google public signing key'
+# wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+# echo 'Update package indices and installing updates to system'
 
 apt-get update
 apt-get upgrade -y
 
-echo 'Installing Google Chrome'
-apt-get install -y --allow-unauthenticated google-chrome-stable
-echo 'Creating Chrome desktop shortcut'
-cp "/usr/share/applications/google-chrome.desktop" "$HOME/Desktop/"
-chmod +x "$HOME/Desktop/google-chrome.desktop"
+# echo 'Installing Google Chrome'
+# apt-get install -y --allow-unauthenticated google-chrome-stable
+# echo 'Creating Chrome desktop shortcut'
+# cp "/usr/share/applications/google-chrome.desktop" "$HOME/Desktop/"
+# chmod +x "$HOME/Desktop/google-chrome.desktop"
 
 echo 'Installing pepperflashplugin-nonfree for Chromium'
 apt-get install -y pepperflashplugin-nonfree
