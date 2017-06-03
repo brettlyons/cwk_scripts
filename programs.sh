@@ -98,11 +98,12 @@ chmod +x "$HOME/Desktop/Minecraft.desktop"
 
 
 echo 'Creating Code Kingdoms desktop shortcut'
+curl -o /usr/share/pixmaps/codekingdoms.png https://codekingdoms.com/favicon.png
 cat > "$HOME/Desktop/CodeKingdoms.desktop" <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
-Icon=firefox
+Icon=/usr/share/pixmaps/codekingdoms.png
 Name=Code Kingdoms
 Comment=Launch Code Kingdoms in browser
 Exec=chromium-browser --new-tab "https://www.codekingdoms.com"
