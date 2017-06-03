@@ -30,7 +30,7 @@ wget "$RELEASE_URL"
 echo 'Installing worldpainter'
 PKG=$(find . -name "worldpainter*.deb")
 # sudo sh "$VER"
-dpkg -i "$PKG"
+sudo dpkg -i "$PKG"
 echo 'Creating WorldPainter desktop shortcut'
 # cp "/opt/worldpainter/WorldPainter.desktop" "$HOME/Desktop"
 cp "/usr/share/applications/worldpainter.desktop" "$HOME/Desktop"
@@ -89,6 +89,7 @@ Icon=/usr/share/pixmaps/minecraft.png
 Categories=Game;
 EOF
 cp "/usr/local/share/applications/minecraft.desktop" "/$HOME/Desktop/Minecraft.desktop"
+exit
 chmod +x "$HOME/Desktop/Minecraft.desktop"
 
 
