@@ -11,7 +11,7 @@ fi
 
 echo 'Adding Google Chrome repo'
 cat > /etc/apt/sources.list.d/google-chrome.list <<EOF
-"deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main"
+deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 EOF
 
 echo 'Adding google public signing key'

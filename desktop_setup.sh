@@ -3,18 +3,18 @@
 # Github: https://www.github.com/brettlyons/cwk_scripts
 
 #packaged_files=("worldpainter" "gimp" "arduino") # "google-chrome"
-#unpackeged_files=("minecraft" "codekingdoms")
+#unpackaged_files=("minecraft" "codekingdoms")
 
 # Sets up the desktop shortcuts
 
 # for name in "${packaged_files[@]}"
-for name in "worldpainter" "gimp" "arduino"
+for application in "worldpainter" "gimp" "arduino"
     do
         cp "/usr/share/applications/$name.desktop" "$HOME/Desktop";
         chmod +x "$HOME/Desktop/$name.desktop";
     done
 
-for name in "minecraft" "codekingdoms"
+for application in "minecraft" "codekingdoms"
     do
         cp "/usr/local/share/applications/$name.desktop" "$HOME/Desktop"
         chmod +x "$HOME/Desktop/$name.desktop"
