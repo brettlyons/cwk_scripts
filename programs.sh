@@ -8,29 +8,31 @@
 # wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 # chrome unnecessary, specify installation of pepper-flash anyway
 echo 'Update package indices and installing updates to system'
-sudo apt-get update
-sudo apt-get upgrade -y
+sudo bash
+
+apt-get update
+apt-get upgrade -y
 
 echo 'Installing Google Chrome'
-sudo apt-get install -y --allow-unauthenticated google-chrome-stable
+apt-get install -y --allow-unauthenticated google-chrome-stable
 echo 'Creating Chrome desktop shortcut'
 cp "/usr/share/applications/google-chrome.desktop" "$HOME/Desktop/"
 chmod +x "$HOME/Desktop/google-chrome.desktop"
 
 echo 'Installing pepperflashplugin-nonfree for Chromium'
-sudo apt-get install -y pepperflashplugin-nonfree
+apt-get install -y pepperflashplugin-nonfree
 echo 'Installing the Java JRE'
-sudo apt-get install -y default-jre
+apt-get install -y default-jre
 echo 'Installing Java JDK'
-sudo apt-get install -y default-jdk
+apt-get install -y default-jdk
 
 echo 'Getting worldpainter'
 RELEASE_URL=$(wget -q -O - www.worldpainter.net/files | grep -o "http://www.worldpainter[^\']*.deb")
 wget "$RELEASE_URL"
 echo 'Installing worldpainter'
 PKG=$(find . -name "worldpainter*.deb")
-# sudo sh "$VER"
-sudo dpkg -i "$PKG"
+#  sh "$VER"
+dpkg -i "$PKG"
 echo 'Creating WorldPainter desktop shortcut'
 # cp "/opt/worldpainter/WorldPainter.desktop" "$HOME/Desktop"
 cp "/usr/share/applications/worldpainter.desktop" "$HOME/Desktop"
@@ -49,7 +51,7 @@ sed -i "22 a <property name=\"lock-screen-suspend-hibernate\" type=\"bool\" valu
 
 cd ..
 echo 'Removing temporary files'
-sudo rm -r -f temp
+rm -r -f temp
 
 echo 'Downloading Resource Pack Workbench'
 wget https://github.com/MightyPork/rpw/releases/download/v4.3.2/RPW.jar
@@ -66,7 +68,7 @@ EOF
 chmod +x "$HOME/Desktop/RPW.desktop"
 
 echo 'Downloading and installing GIMP'
-sudo apt-get install -y gimp
+ apt-get install -y gimp
 cp "/usr/share/applications/gimp.desktop" "$HOME/Desktop"
 chmod +x "$HOME/Desktop/gimp.desktop"
 
@@ -74,7 +76,6 @@ echo 'Downloading Minecraft.jar file'
 # wget s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
 # echo 'Creating Minecraft desktop shortcut'
 # (echo '[Desktop Entry]' && echo 'Encoding=UTF-8' && echo 'Type=Application' && echo 'Icon=lxterminal' && echo 'Name=Minecraft' && echo 'Comment=Launch Minecraft' && echo 'Exec=java -jar $HOME/Minecraft.jar') > /home/student/Desktop/Minecraft.desktop
-sudo bash
 curl -o /usr/local/bin/Minecraft.jar https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
 curl -o /usr/share/pixmaps/minecraft.png https://chrx.org/minecraft.png
 mkdir -p /usr/local/share/applications
@@ -89,7 +90,6 @@ Icon=/usr/share/pixmaps/minecraft.png
 Categories=Game;
 EOF
 cp "/usr/local/share/applications/minecraft.desktop" "/$HOME/Desktop/Minecraft.desktop"
-exit
 chmod +x "$HOME/Desktop/Minecraft.desktop"
 
 
@@ -111,3 +111,4 @@ apt install -y arduino
 cp "/usr/share/applications/arduino.desktop" "$HOME/Desktop"
 chmod +x "$HOME/Desktop/arduino.desktop"
 
+exit
