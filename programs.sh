@@ -105,7 +105,7 @@ Type=Application
 Icon=firefox
 Name=Code Kingdoms
 Comment=Launch Code Kingdoms in browser
-Exec=x-www-browser --new-tab "https://www.codekingdoms.com"
+Exec=chromium-browser --new-tab "https://www.codekingdoms.com"
 EOF
 chmod +x "$HOME/Desktop/CodeKingdoms.desktop"
 
