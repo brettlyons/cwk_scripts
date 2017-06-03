@@ -1,14 +1,17 @@
 #!/bin/bash
 # Script to install applications and apply updates for GalliumOS
 
-# echo 'Adding Google Chrome repo'
-# echo deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main > google-chrome.list
-# sudo mv google-chrome.list /etc/apt/sources.list.d/
-# echo 'Adding google public signing key'
-# wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
-# chrome unnecessary, specify installation of pepper-flash anyway
+if [ "$EUID" -ne 0 ]
+then echo "Please run as root or use sudo"
+     exit
+fi
+
+echo 'Adding Google Chrome repo'
+echo deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main > google-chrome.list
+sudo mv google-chrome.list /etc/apt/sources.list.d/
+echo 'Adding google public signing key'
+wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 echo 'Update package indices and installing updates to system'
-sudo bash
 
 apt-get update
 apt-get upgrade -y
@@ -56,7 +59,7 @@ rm -r -f temp
 echo 'Downloading Resource Pack Workbench'
 wget https://github.com/MightyPork/rpw/releases/download/v4.3.2/RPW.jar
 echo 'Creating RPW desktop shortcut'
-cat "$HOME/Desktop/RPW.desktop" <<EOF
+cat > "$HOME/Desktop/RPW.desktop" <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
