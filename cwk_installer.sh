@@ -8,8 +8,8 @@ mkdir temp
 mv $0 temp
 cd temp || return
 
-curl -O programs.sh https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/programs.sh
-curl -O programs.sh https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/desktop_setup.sh
+wget -O programs.sh https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/programs.sh
+wget -O desktop_setup.sh https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/desktop_setup.sh
 
 sudo bash programs.sh
 bash desktop_setup.sh
