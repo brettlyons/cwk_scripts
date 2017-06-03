@@ -23,7 +23,6 @@ apt-get upgrade -y
 echo 'Installing Google Chrome'
 apt-get install -y --allow-unauthenticated google-chrome-stable
 
-# Install everything on one line.
 apt-get install -y pepperflashplugin-nonfree\
         default-jre default-jdk gimp arduino
 
@@ -43,12 +42,9 @@ dpkg -i "$PKG"
 #./arduino.run
 #chmod +x $HOME/Desktop/Arduino Create Agent.desktop
 
-# Add a line of XML to the listed xfce4 config so that the screen won't lock after suspending.  (and so not have to type in the password everytime the screen sleeps or the lid is closed)
-sed -i "22 a \ \ \ \ <property name=\"lock-screen-suspend-hibernate\" type=\"bool\" value=\"false\"/>" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
-
 
 curl -o /usr/local/bin/RPW.jar https://github.com/MightyPork/rpw/releases/download/v4.3.2/RPW.jar
-cat > /usr/local/share/applications/RPW.desktop <<EOF
+cat > /usr/local/share/applications/rpw.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
@@ -73,7 +69,7 @@ Categories=Game;
 EOF
 
 curl -o /usr/share/pixmaps/codekingdoms.png https://codekingdoms.com/favicon.png
-cat > "/usr/local/share/applications/CodeKingdoms.desktop" <<EOF
+cat > "/usr/local/share/applications/codekingdoms.desktop" <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
@@ -82,6 +78,5 @@ Name=Code Kingdoms
 Comment=Launch Code Kingdoms in browser
 Exec=chromium-browser --new-tab "https://www.codekingdoms.com"
 EOF
-chmod +x "$HOME/Desktop/CodeKingdoms.desktop"
 
 exit
