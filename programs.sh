@@ -46,11 +46,7 @@ dpkg -i "$PKG"
 # Add a line of XML to the listed xfce4 config so that the screen won't lock after suspending.  (and so not have to type in the password everytime the screen sleeps or the lid is closed)
 sed -i "22 a \ \ \ \ <property name=\"lock-screen-suspend-hibernate\" type=\"bool\" value=\"false\"/>" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
 
-cd "$HOME" || return
-echo 'Removing temporary files'
-rm -r -f temp
 
-echo 'Downloading Resource Pack Workbench'
 curl -o /usr/local/bin/RPW.jar https://github.com/MightyPork/rpw/releases/download/v4.3.2/RPW.jar
 cat > /usr/local/share/applications/RPW.desktop <<EOF
 [Desktop Entry]
