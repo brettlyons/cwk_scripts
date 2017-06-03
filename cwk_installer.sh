@@ -17,4 +17,6 @@ bash desktop_setup.sh
 cd "$HOME" || return
 rm -r -f temp
 
-shutdown -r -t 5
+echo "Restarting in 5 seconds for new settings to take effect... Ctl+C to cancel"
+sleep 5
+shutdown -r now
