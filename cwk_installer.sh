@@ -6,6 +6,7 @@ mkdir temp
 mv install.sh temp
 cd temp || return
 
+# TODO: factor out desktop icons into a script separate from installs.
 
 echo 'Installing updates and programs'
 wget -O programs.sh https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/programs.sh
