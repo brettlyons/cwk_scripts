@@ -8,9 +8,8 @@ cd temp || return
 
 
 echo 'Installing updates and programs'
-wget -O programs.sh https://www.dropbox.com/s/73au59gq1bjetdi/programs.sh?dl=1
+wget -O programs.sh https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/programs.sh
 # wget -O fixes.sh https://goo.gl/9KkNvA
-# TODO: set up fixes.sh to modify xfce4 config to not lock the screen after sleeps and suspends -- or just have this one script do that.
 # sh fixes.sh
 sh programs.sh
 
