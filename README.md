@@ -1,5 +1,5 @@
 # cwk_scripts
-CWK camp prep script for use with GalliumOS
+CWK minecraft camp prep script for use after installing GalliumOS
 
 # to download / run the scripts, type the following
 curl -O https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/cwk_installer.sh | bash
