@@ -14,12 +14,14 @@ for script in "programs.sh" "desktop_setup.sh" "fixes.sh"
     done
 
 sudo bash programs.sh
-bash desktop_setup.sh
 
 if pgrep lxpanel # run fixes.sh on lubuntu machines
 then
-    bash fixes.sh
+    sudo bash fixes.sh
 fi
+
+bash desktop_setup.sh
+
 
 
 cd "$HOME" || return
