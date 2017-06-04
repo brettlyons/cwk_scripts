@@ -14,7 +14,7 @@ for name in "worldpainter" "gimp" "arduino" # "google-chrome"
         chmod +x "$HOME/Desktop/$name.desktop";
     done
 
-for name in "minecraft" "codekingdoms"
+for name in "minecraft" "codekingdoms" "rpw"
     do
         cp "/usr/local/share/applications/$name.desktop" "$HOME/Desktop"
         chmod +x "$HOME/Desktop/$name.desktop"
