@@ -43,8 +43,9 @@ dpkg -i "$PKG"
 #./arduino.run
 #chmod +x $HOME/Desktop/Arduino Create Agent.desktop
 
+mkdir -p /usr/local/share/applications
 
-curl -oL /usr/local/bin/RPW.jar https://github.com/MightyPork/rpw/releases/download/v4.3.2/RPW.jar
+curl -L -o /usr/local/bin/RPW.jar https://github.com/MightyPork/rpw/releases/download/v4.3.2/RPW.jar
 cat > /usr/local/share/applications/rpw.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
@@ -55,9 +56,8 @@ Comment=Launch Resource Pack Workbench
 Exec=java -jar /usr/local/bin/RPW.jar
 EOF
 
-curl -oL /usr/local/bin/Minecraft.jar https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
-curl -oL /usr/share/pixmaps/minecraft.png https://chrx.org/minecraft.png
-mkdir -p /usr/local/share/applications
+curl -L -o /usr/local/bin/Minecraft.jar https://s3.amazonaws.com/Minecraft.Download/launcher/Minecraft.jar
+curl -L -o /usr/share/pixmaps/minecraft.png https://chrx.org/minecraft.png
 cat > /usr/local/share/applications/minecraft.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
@@ -69,7 +69,7 @@ Icon=/usr/share/pixmaps/minecraft.png
 Categories=Game;
 EOF
 
-curl -oL /usr/share/pixmaps/codekingdoms.png https://codekingdoms.com/favicon.png
+curl -o /usr/share/pixmaps/codekingdoms.png https://codekingdoms.com/favicon.png
 cat > /usr/local/share/applications/codekingdoms.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
