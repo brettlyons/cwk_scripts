@@ -24,7 +24,8 @@ echo 'Installing Google Chrome'
 apt-get install -y --allow-unauthenticated google-chrome-stable
 
 apt-get install -y pepperflashplugin-nonfree\
-        default-jre default-jdk gimp arduino chromium-browser
+        default-jre default-jdk gimp arduino\
+        chromium-browser
 
 echo 'Getting worldpainter'
 RELEASE_URL=$(wget -q -O - www.worldpainter.net/files | grep -o "http://www.worldpainter[^\']*.deb")
