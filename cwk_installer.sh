@@ -5,7 +5,7 @@
 
 cd "$HOME" || return  # start in the same place every time.
 mkdir temp
-mv $0 temp
+mv "$0" temp
 cd temp || return
 
 for script in "programs.sh" "desktop_setup.sh" # "fixes.sh"
@@ -15,6 +15,12 @@ for script in "programs.sh" "desktop_setup.sh" # "fixes.sh"
 
 sudo bash programs.sh
 bash desktop_setup.sh
+
+if pgrep lxpanel # run fixes.sh on lubuntu machines
+then
+    bash fixes.sh
+fi
+
 
 cd "$HOME" || return
 rm -r -f temp
