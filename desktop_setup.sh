@@ -20,8 +20,9 @@ for name in "minecraft" "codekingdoms" "rpw"
         chmod +x "$HOME/Desktop/$name.desktop"
     done
 
-# toggle the lock-screen config.
-xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate --toggle
+# turn off screen locking
+xfconf-query -c xfce4-power-manager -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false
+
 # prevent the screensaver from locking too
 sed -i '/lock:/c lock:\t\tFalse' "$HOME/.xscreensaver"
 
