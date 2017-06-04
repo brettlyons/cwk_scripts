@@ -8,7 +8,7 @@ mkdir temp
 mv "$0" temp
 cd temp || return
 
-for script in "programs.sh" "desktop_setup.sh" # "fixes.sh"
+for script in "programs.sh" "desktop_setup.sh" "fixes.sh"
     do
         wget -O $script https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/$script
     done
