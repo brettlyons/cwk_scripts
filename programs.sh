@@ -69,7 +69,7 @@ Categories=Game;
 EOF
 
 curl -o /usr/share/pixmaps/codekingdoms.png https://codekingdoms.com/favicon.png
-cat > "/usr/local/share/applications/codekingdoms.desktop" <<EOF
+cat > /usr/local/share/applications/codekingdoms.desktop <<EOF
 [Desktop Entry]
 Encoding=UTF-8
 Type=Application
