@@ -38,9 +38,6 @@ apt-get install -y pepperflashplugin-nonfree\
         default-jre default-jdk gimp arduino\
         chromium-browser
 
-
-
-
 #echo 'Downloading Arduino web plugin'
 #RELEASE_VER=$(wget -q -O - https://github.com/arduino/arduino-create-agent | grep -o "http://downloads.arduino.cc[^\']*.run")
 #wget -O arduino.run $RELEASE_VER

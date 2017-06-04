@@ -21,7 +21,7 @@ for name in "minecraft" "codekingdoms" "rpw"
     done
 
 # Add a line of XML to the listed xfce4 config file so that the screen won't lock after suspending.  (and so not have to type in the password everytime the screen sleeps or the lid is closed)
-sed -i "/</property>/c \ \ \ \ <property name=\"lock-screen-suspend-hibernate\" type=\"bool\" value=\"false\"/>\n</property>" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
+sed -i "/<\/property>/c \ \ \ \ <property name=\"lock-screen-suspend-hibernate\" type=\"bool\" value=\"false\"/>\n<\/property>" "$HOME/.config/xfce4/xfconf/xfce-perchannel-xml/xfce4-power-manager.xml"
 
 # prevent the screensaver from locking too
 sed -i '/lock:/c lock:\t\tFalse' "$HOME/.xscreensaver"
