@@ -20,13 +20,6 @@ wget -q -O - https://dl.google.com/linux/linux_signing_key.pub | apt-key add -
 apt-get update
 apt-get upgrade -y
 
-echo 'Installing Google Chrome'
-apt-get install -y --allow-unauthenticated google-chrome-stable
-
-apt-get install -y pepperflashplugin-nonfree\
-        default-jre default-jdk gimp arduino\
-        chromium-browser
-
 echo 'Getting worldpainter'
 RELEASE_URL=$(wget -q -O - www.worldpainter.net/files | grep -o "http://www.worldpainter[^\']*.deb")
 wget "$RELEASE_URL"
@@ -34,6 +27,19 @@ echo 'Installing worldpainter'
 PKG=$(find . -name "worldpainter*.deb")
 #  sh "$VER"
 dpkg -i "$PKG"
+
+# worldpainter doesn't configure right, this fixes it while still leaving it up to the package manager.
+apt-get install -f
+
+echo 'Installing Google Chrome'
+apt-get install -y --allow-unauthenticated google-chrome-stable
+
+apt-get install -y pepperflashplugin-nonfree\
+        default-jre default-jdk gimp arduino\
+        chromium-browser
+
+
+
 
 #echo 'Downloading Arduino web plugin'
 #RELEASE_VER=$(wget -q -O - https://github.com/arduino/arduino-create-agent | grep -o "http://downloads.arduino.cc[^\']*.run")
