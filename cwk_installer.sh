@@ -8,8 +8,10 @@ mkdir temp
 mv $0 temp
 cd temp || return
 
-wget -O programs.sh https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/programs.sh
-wget -O desktop_setup.sh https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/desktop_setup.sh
+for script in "programs.sh" "desktop_setup.sh" # "fixes.sh"
+    do
+        wget -O $script https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/$script
+    done
 
 sudo bash programs.sh
 bash desktop_setup.sh
