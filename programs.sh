@@ -28,7 +28,7 @@ PKG=$(find . -name "worldpainter*.deb")
 #  sh "$VER"
 dpkg -i "$PKG"
 
-# worldpainter doesn't configure right, this fixes it while still leaving it up to the package manager.
+# worldpainter doesn't configure right, this fixes it while still managing the install with the package manager.
 apt --fix-broken install -y
 
 echo 'Installing Google Chrome'
