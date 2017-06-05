@@ -23,7 +23,8 @@ apt-get upgrade -y
 echo 'Installing Google Chrome'
 apt-get install -y --allow-unauthenticated google-chrome-stable
 
-apt-get install -y pepperflashplugin-nonfree\
+apt-get install -y -o Dpkg::Options::="--force-confnew"\
+        pepperflashplugin-nonfree\
         default-jre default-jdk gimp arduino\
         chromium-browser
 
