@@ -9,6 +9,9 @@ then echo "Please run as root or use sudo"
      exit
 fi
 
+# Assume the script runs unatttended.
+export DEBIAN_FRONTEND=noninteractive 
+
 echo 'Adding Google Chrome repo'
 cat > /etc/apt/sources.list.d/google-chrome.list <<EOF
 deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
