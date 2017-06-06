@@ -8,17 +8,17 @@
 # Sets up the desktop shortcuts
 
 # for name in "${packaged_files[@]}"
-for name in "worldpainter" "gimp" "arduino" # "google-chrome"
+for name in "worldpainter" "gimp" "arduino" "minecraft" "codekingdoms" "rpw"# "google-chrome"
     do
-        cp "/usr/share/applications/$name.desktop" "$HOME/Desktop";
-        chmod +x "$HOME/Desktop/$name.desktop";
+      cp "$(find /usr -name $name)" "$HOME/Desktop";
+      chmod +x "$HOME/Desktop/$name.desktop";
     done
 
-for name in "minecraft" "codekingdoms" "rpw"
-    do
-        cp "/usr/local/share/applications/$name.desktop" "$HOME/Desktop"
-        chmod +x "$HOME/Desktop/$name.desktop"
-    done
+#for name in "minecraft" "codekingdoms" "rpw"
+    #do
+        #cp "/usr/local/share/applications/$name.desktop" "$HOME/Desktop"
+        #chmod +x "$HOME/Desktop/$name.desktop"
+    #done
 
 # turn off screen locking
 xfconf-query -c xfce4-power-manager -n -t bool -p /xfce4-power-manager/lock-screen-suspend-hibernate -s false
