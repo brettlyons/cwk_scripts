@@ -5,4 +5,4 @@ CWK minecraft camp prep script for use after installing Lubuntu or GalliumOS
 
 curl https://raw.githubusercontent.com/brettlyons/cwk_scripts/master/install.sh | bash
 
-# type in password, and wait.
+# type in password, it'll reset after it's finished.
