@@ -25,6 +25,6 @@ wget -O asound.state https://www.dropbox.com/s/dxhzmokatah17sb/asound.state?dl=1
 mv asound.state /var/lib/alsa/
 exit
 ASINK=`pacmd list-sinks | grep name: | grep alsa_output | grep analog | awk ' { print substr($2,2,length($2) - 2) } '`
-pacmd set-default-sink $ASINK
+pacmd set-default-sink "$ASINK"
 
 
